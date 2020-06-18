@@ -31,5 +31,16 @@ public class UserRegistrationTest
         boolean result = userRegistration.validateFirstName("An");
         Assert.assertFalse(result);
     }
+
+    /**
+     * TEST CASES FOR LAST NAME
+     */
+    @Test
+    public void givenValidLastNameReturnsTrue()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateLastName("Dakhare");
+        Assert.assertTrue(result);
+    }
 }
 

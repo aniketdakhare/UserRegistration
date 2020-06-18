@@ -19,5 +19,16 @@ public class UserRegistration
         Pattern pattern = Pattern.compile(NAME_PATTERN);
         return pattern.matcher(firstName).matches();
     }
+
+    /**
+     * METHOD TO VALIDATE LAST NAME
+     * @param lastName takes Last Name for validation
+     * @return value as true
+     */
+    public boolean validateLastName(String lastName)
+    {
+        Pattern pattern = Pattern.compile(NAME_PATTERN);
+        return pattern.matcher(lastName).matches();
+    }
 }
 

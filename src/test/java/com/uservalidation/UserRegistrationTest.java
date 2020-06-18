@@ -58,5 +58,32 @@ public class UserRegistrationTest
         boolean result = userRegistration.validateLastName("Da");
         Assert.assertFalse(result);
     }
+
+    /**
+     * TEST CASES FOR MOBILE NUMBER
+     */
+    @Test
+    public void givenMobileNumberInPreDefinedFormatReturnsTrue()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateMobileNumber("92 9999999999");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenMobileNumberWithNineDigitReturnsFalse()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateMobileNumber("92 888888888");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenMobileNumberWithoutSpaceReturnsFalse()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateMobileNumber("928888888889");
+        Assert.assertFalse(result);
+    }
 }
 

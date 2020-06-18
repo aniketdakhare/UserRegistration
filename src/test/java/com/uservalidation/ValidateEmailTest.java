@@ -8,6 +8,9 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
+/**
+ * TEST CASE FOR EMAIL
+ */
 @RunWith(Parameterized.class)
 public class ValidateEmailTest
 {
@@ -19,6 +22,7 @@ public class ValidateEmailTest
         this.emailIdForTest = emailIdForTest;
         this.expectedResult = result;
     }
+
     @Test
     public void givenValidAndInvalidEmailId_ShouldReturnAsPerResult()
     {

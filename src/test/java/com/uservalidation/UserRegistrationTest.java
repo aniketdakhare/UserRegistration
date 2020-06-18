@@ -5,11 +5,31 @@ import org.junit.Test;
 
 public class UserRegistrationTest
 {
+    /**
+     * TEST CASES FOR FIRST NAME
+     */
     @Test
-    public void testWelcomeMassage()
+    public void givenValidFirstNameReturnsTrue()
     {
         UserRegistration userRegistration = new UserRegistration();
-        String massage = userRegistration.welcomeMassage("Display Welcome Massage");
-        Assert.assertEquals("Welcome to User Registration Program",massage);
+        boolean result = userRegistration.validateFirstName("Aniket");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenFirstNameStartWithSmallerCaseReturnsFalse()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("aniket");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenFirstNameHasTwoCharacterReturnsFalse()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("An");
+        Assert.assertFalse(result);
     }
 }
+

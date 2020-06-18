@@ -42,5 +42,21 @@ public class UserRegistrationTest
         boolean result = userRegistration.validateLastName("Dakhare");
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenLastNameStartWithSmallerCaseReturnsFalse()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateLastName("dakhare");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastNameHasTwoCharacterReturnsFalse()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateLastName("Da");
+        Assert.assertFalse(result);
+    }
 }
 

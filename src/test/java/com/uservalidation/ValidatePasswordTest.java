@@ -39,7 +39,9 @@ public class ValidatePasswordTest
                 {"Aniket45", true},
                 {"Aniket9", false},
                 {"aniket4566", false},
-                {"aniket", false}
+                {"aniket", false},
+                {"Anikethjhhk", false},
+                {"7777777777", false}
                 };
 
         return Arrays.asList(data);

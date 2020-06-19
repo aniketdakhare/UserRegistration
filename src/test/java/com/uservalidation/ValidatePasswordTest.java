@@ -35,13 +35,16 @@ public class ValidatePasswordTest
     public static Collection<Object[]> data()
     {
         Object[][] data = new Object[][]{
-                {"Aniket3456", true},
-                {"Aniket45", true},
-                {"Aniket9", false},
-                {"aniket4566", false},
-                {"aniket", false},
-                {"Anikethjhhk", false},
-                {"7777777777", false}
+                {"Aniket@3456", true},
+                {"Aniket@5", true},
+                {"Anik@t9", false},
+                {"anik@t4566", false},
+                {"ani@et", false},
+                {"Anikethj@hk", false},
+                {"7777@77777", false},
+                {"Aniket345", false},
+                {"Aniket#**@@7", false},
+                {"#$%&*$#@567", false}
                 };
 
         return Arrays.asList(data);

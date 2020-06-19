@@ -2,6 +2,8 @@ package com.uservalidation;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 public class UserRegistrationTest
 {
@@ -83,25 +85,6 @@ public class UserRegistrationTest
     {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateMobileNumber("928888888889");
-        Assert.assertFalse(result);
-    }
-
-    /**
-     * TEST CASES FOR PASSWORD
-     */
-    @Test
-    public void givenPasswordWithMinimumEightCharacterReturnTrue()
-    {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validPassword("ssdd4456");
-        Assert.assertTrue(result);
-    }
-
-    @Test
-    public void givenPasswordWithLessThanEightCharacterReturnFalse()
-    {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validPassword("sdd4456");
         Assert.assertFalse(result);
     }
 }

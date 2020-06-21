@@ -1,35 +1,36 @@
 package com.uservalidation;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 public class UserRegistrationTest
 {
-    /**
-     * TEST CASES FOR FIRST NAME
-     */
-    @Test
-    public void givenValidFirstNameReturnsTrue()
+    UserRegistration userRegistration;
+
+    @Before
+    public void objectOf_UserRegistrationClass()
     {
-        UserRegistration userRegistration = new UserRegistration();
+        userRegistration = new UserRegistration();
+    }
+
+    @Test
+    public void givenValidFirstName_ReturnsTrue()
+    {
         boolean result = userRegistration.validateFirstName("Aniket");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenFirstNameStartWithSmallerCaseReturnsFalse()
+    public void givenFirstName_StartWithSmallerCase_ReturnsFalse()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateFirstName("aniket");
         Assert.assertFalse(result);
     }
 
     @Test
-    public void givenFirstNameHasTwoCharacterReturnsFalse()
+    public void givenFirstName_HasTwoCharacter_ReturnsFalse()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateFirstName("An");
         Assert.assertFalse(result);
     }
@@ -38,25 +39,22 @@ public class UserRegistrationTest
      * TEST CASES FOR LAST NAME
      */
     @Test
-    public void givenValidLastNameReturnsTrue()
+    public void givenValidLastName_ReturnsTrue()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateLastName("Dakhare");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenLastNameStartWithSmallerCaseReturnsFalse()
+    public void givenLastName_StartWithSmallerCase_ReturnsFalse()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateLastName("dakhare");
         Assert.assertFalse(result);
     }
 
     @Test
-    public void givenLastNameHasTwoCharacterReturnsFalse()
+    public void givenLastName_HasTwoCharacter_ReturnsFalse()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateLastName("Da");
         Assert.assertFalse(result);
     }
@@ -65,27 +63,25 @@ public class UserRegistrationTest
      * TEST CASES FOR MOBILE NUMBER
      */
     @Test
-    public void givenMobileNumberInPreDefinedFormatReturnsTrue()
+    public void givenMobileNumber_InPreDefinedFormat_ReturnsTrue()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateMobileNumber("92 9999999999");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenMobileNumberWithNineDigitReturnsFalse()
+    public void givenMobileNumber_WithNineDigit_ReturnsFalse()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateMobileNumber("92 888888888");
         Assert.assertFalse(result);
     }
 
     @Test
-    public void givenMobileNumberWithoutSpaceReturnsFalse()
+    public void givenMobileNumber_WithoutSpace_ReturnsFalse()
     {
-        UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateMobileNumber("928888888889");
         Assert.assertFalse(result);
     }
+
 }
 

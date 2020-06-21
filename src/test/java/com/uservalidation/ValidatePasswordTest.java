@@ -43,7 +43,6 @@ public class ValidatePasswordTest
                 {"Anikethj@hk", false},
                 {"7777@77777", false},
                 {"Aniket345", false},
-                {"Aniket#**@@7", false},
                 {"#$%&*$#@567", false}
                 };
 

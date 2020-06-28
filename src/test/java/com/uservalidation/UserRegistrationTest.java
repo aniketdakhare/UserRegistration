@@ -82,6 +82,5 @@ public class UserRegistrationTest
         boolean result = userRegistration.validateMobileNumber("928888888889");
         Assert.assertFalse(result);
     }
-
 }
 

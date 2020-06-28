@@ -49,4 +49,3 @@ public class ValidatePasswordTest
         return Arrays.asList(data);
     }
 }
-

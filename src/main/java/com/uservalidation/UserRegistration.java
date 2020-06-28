@@ -68,4 +68,3 @@ public class UserRegistration
         return pattern.matcher(password).matches();
     }
 }
-
